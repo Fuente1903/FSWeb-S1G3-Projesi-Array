@@ -40,8 +40,10 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(dizi) {
+  const kopyaDizi = [...dizi];
+  
+  return kopyaDizi;
 }
 
 
@@ -56,9 +58,15 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
+function dizi25Cesitmi(dizi){
+    if (dizi.length === 25) {
+       } else {
+        return false;
+      }
+    }
+
   /*kod buraya*/
-}
+
 
 
 /* Görev 3:
@@ -74,8 +82,9 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(dizi, yeniTat) {
+  const yeniDizi = [yeniTat, ...dizi];
+  return yeniDizi;
 }
 
 
@@ -92,8 +101,10 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(dizi) {
+  const yeniDizi = dizi.slice(0, -1);
+
+  return yeniDizi; 
 }
 
 
@@ -108,8 +119,9 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(dizi, indeks) {
+  const cesit = dizi[indeks];
+  return cesit;
 }
 
 
@@ -128,11 +140,13 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(dizi, lezzetAdi) {
+  const indeks = dizi.indexOf(lezzetAdi);
+  if (indeks !== -1) {
+    dizi.splice(indeks, 1);
+  }
+  return dizi;
 }
-
-
 /* Görev 7:
 
 14 Şubat Sevgililer Günü'nde Firma, tüm çikolata lezzetlerini öne çıkaran bir promosyon malzemeleri oluşturmak istiyor.
@@ -154,8 +168,16 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(dizi, filtre) {
+  const yeniDizi = [];
+  
+  for (let i = 0; i < dizi.length; i++) {
+    if (dizi[i].includes(filtre)) {
+      yeniDizi.push(dizi[i]);
+    }
+  }
+  
+  return yeniDizi;
 }
 
 
